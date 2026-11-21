@@ -1,4 +1,20 @@
 /* Orkelya Scoreboard — glass monocromo, estilo Orkelya. */
+
+/* ===== Orkelya Design Tokens v1 — identidad única del ecosistema ===== */
+:root {
+  --ork-surface: rgba(15, 15, 20, 0.55);
+  --ork-surface-deep: rgba(10, 10, 14, 0.72);
+  --ork-border: rgba(255, 255, 255, 0.10);
+  --ork-border-strong: rgba(255, 255, 255, 0.18);
+  --ork-ink: #f2f2f5;
+  --ork-ink-dim: rgba(255, 255, 255, 0.55);
+  --ork-radius-card: 22px;
+  --ork-radius-pill: 999px;
+  --ork-blur: 16px;
+  --ork-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  --ork-bare-outline: rgba(0, 0, 0, 0.32);
+  --ork-bare-textshadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html, body { background: transparent; overflow: hidden; font-family: 'Inter', 'Segoe UI', sans-serif; }
 
@@ -7,13 +23,13 @@ html, body { background: transparent; overflow: hidden; font-family: 'Inter', 'S
   transform: translate(-50%, -50%);
   width: 420px; max-height: 70vh;
   display: flex; flex-direction: column;
-  border-radius: 22px;
+  border-radius: var(--ork-radius-card);
   padding: 18px 20px 14px;
-  background: rgba(15, 15, 20, 0.55);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.10);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
-  color: #f2f2f5;
+  background: var(--ork-surface);
+  backdrop-filter: blur(var(--ork-blur)); -webkit-backdrop-filter: blur(var(--ork-blur));
+  border: 1px solid var(--ork-border);
+  box-shadow: var(--ork-shadow);
+  color: var(--ork-ink);
   animation: boardIn .18s cubic-bezier(.2,.9,.3,1.15);
 }
 @keyframes boardIn { from { opacity: 0; transform: translate(-50%,-48%) scale(.97); } }
