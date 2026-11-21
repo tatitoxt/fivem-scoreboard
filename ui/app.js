@@ -45,6 +45,15 @@
   } else if (lg) lg.remove();
   document.getElementById('board').style.setProperty('--ork-watermark',
     br.watermark ? 'url(' + br.watermark + ')' : 'none');
+  const th = m.theme || {};
+  Object.entries(th.vars || {}).forEach(([k, v]) =>
+    document.documentElement.style.setProperty(k, v));
+  let cs = document.getElementById('custom-theme');
+  if (th.css) {
+    if (!cs) { cs = document.createElement('style');
+      cs.id = 'custom-theme'; document.head.appendChild(cs); }
+    cs.textContent = th.css;
+  }
       document.getElementById('max-v').textContent = m.max || 32;
       document.getElementById('count-v').textContent = m.count || 0;
       document.getElementById('c-id').textContent = (m.labels || {}).id || 'ID';

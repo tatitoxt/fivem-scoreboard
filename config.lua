@@ -26,6 +26,16 @@ Config.Strings = {
 
 -- Branding del server: logo en el header + watermark de fondo.
 -- Rutas relativas a ui/ (ej. 'assets/logo.png') o URL.
+-- Theme libre: pisa cualquier variable CSS (--ork-*) y/o mete CSS crudo.
+-- Ejemplos: ['--ork-radius-card']='0px' (cuadrado), ['--ork-accent']='#0f0'
+Config.Theme = {
+  vars = {
+    -- ['--ork-radius-card'] = '0px',
+    -- ['--ork-accent'] = '#ffffff',
+  },
+  css = '',   -- CSS crudo: aquí cabe TODO lo demás
+}
+
 Config.Brand = {
   -- logo = 'assets/logo.png',
   -- watermark = 'assets/logo.png',

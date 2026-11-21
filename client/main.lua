@@ -24,7 +24,7 @@ local function sendBoard()
   local name = Config.ServerName ~= '' and Config.ServerName or GetConvar('sv_hostname', 'FiveM')
   SendNUIMessage({
     type = 'orkelya_score', action = 'board',
-    server = name, brand = Config.Brand,
+    server = name, brand = Config.Brand, theme = Config.Theme,
     footer = Config.FooterText or '',
     count = #GetActivePlayers(),
     max = maxc,
