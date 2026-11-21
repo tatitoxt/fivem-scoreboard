@@ -1,0 +1,23 @@
+/* === Orkelya Theme — editá acá la identidad de tu server === */
+/* Sobrescribe cualquier variable del design kit; estos valores se aplican
+   DESPUÉS de style.css, así que ganan. */
+:root{
+  /* Acento principal del server (botones activos, highlights, selección) */
+  --ork-accent: rgba(255,255,255,.9);
+  /* Fondo del panel (glass) — más alpha = más opaco */
+  --ork-surface: rgba(15,15,20,.55);
+  --ork-surface-deep: rgba(10,10,14,.72);
+  /* Borde, tinta y radios */
+  --ork-border: rgba(255,255,255,.10);
+  --ork-ink: #f2f2f5;
+  --ork-radius-card: 22px;
+  --ork-radius-pill: 999px;
+  --ork-blur: 16px;
+  --ork-shadow: 0 8px 32px rgba(0,0,0,.35);
+  /* Tipografía — servila en ui/fonts/ o usá una webfont */
+  /* --ork-font: 'Inter', 'Segoe UI', sans-serif; */
+}
+/* Ejemplos de overrides comunes:
+.pill-btn.primary{background:var(--ork-accent);color:#0a0a0d}
+.item:hover{border-color:var(--ork-accent)}
+*/
