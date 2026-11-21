@@ -23,3 +23,10 @@ Config.Strings = {
   players = 'JUGADORES', id = 'ID', name = 'NOMBRE', ping = 'PING',
   staff = 'STAFF', you = 'VOS',
 }
+
+-- Branding del server: logo en el header + watermark de fondo.
+-- Rutas relativas a ui/ (ej. 'assets/logo.png') o URL.
+Config.Brand = {
+  -- logo = 'assets/logo.png',
+  -- watermark = 'assets/logo.png',
+}

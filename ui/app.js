@@ -36,6 +36,15 @@
       meta.showId = m.showId !== false;
       meta.labels = m.labels || {};
       document.getElementById('server').textContent = m.server || 'FiveM';
+  const br = m.brand || {};
+  let lg = $('logo');
+  if (br.logo) {
+    if (!lg) { lg = document.createElement('img'); lg.id = 'logo';
+      document.getElementById('server').parentNode.insertBefore(lg, document.getElementById('server')); }
+    lg.src = br.logo; document.getElementById('server').classList.add('with-logo');
+  } else if (lg) lg.remove();
+  document.getElementById('board').style.setProperty('--ork-watermark',
+    br.watermark ? 'url(' + br.watermark + ')' : 'none');
       document.getElementById('max-v').textContent = m.max || 32;
       document.getElementById('count-v').textContent = m.count || 0;
       document.getElementById('c-id').textContent = (m.labels || {}).id || 'ID';
