@@ -37,7 +37,7 @@
       meta.labels = m.labels || {};
       document.getElementById('server').textContent = m.server || 'FiveM';
   const br = m.brand || {};
-  let lg = $('logo');
+  let lg = document.getElementById('logo');
   if (br.logo) {
     if (!lg) { lg = document.createElement('img'); lg.id = 'logo';
       document.getElementById('server').parentNode.insertBefore(lg, document.getElementById('server')); }
