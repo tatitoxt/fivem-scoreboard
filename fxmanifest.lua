@@ -5,7 +5,7 @@ lua54 'yes'
 name 'orkelya_scoreboard'
 description 'Orkelya Scoreboard — lista de jugadores estilo Liquid Glass'
 author 'Orkelya'
-version '0.1.1'
+version '0.1.2'
 
 shared_scripts { 'config.lua' }
 client_scripts { 'client/main.lua' }
