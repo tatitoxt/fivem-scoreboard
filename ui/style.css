@@ -1,0 +1,66 @@
+/* Orkelya Scoreboard — glass monocromo, estilo Orkelya. */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { background: transparent; overflow: hidden; font-family: 'Inter', 'Segoe UI', sans-serif; }
+
+#board {
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px; max-height: 70vh;
+  display: flex; flex-direction: column;
+  border-radius: 22px;
+  padding: 18px 20px 14px;
+  background: rgba(15, 15, 20, 0.55);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+  color: #f2f2f5;
+  animation: boardIn .18s cubic-bezier(.2,.9,.3,1.15);
+}
+@keyframes boardIn { from { opacity: 0; transform: translate(-50%,-48%) scale(.97); } }
+#board[hidden] { display: none; }
+
+.pill-solid #board { background: rgba(15, 15, 20, 0.95); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.pill-line  #board { background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; border-color: rgba(255,255,255,.35); box-shadow: none; }
+.pill-bare  #board {
+  background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none;
+  border-color: rgba(0,0,0,.32); box-shadow: none;
+  text-shadow: 0 1px 2px rgba(0,0,0,.65);
+}
+.pill-bare .row.me { background: rgba(0,0,0,.18); }
+
+#head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 10px; }
+#server { font-size: 15px; font-weight: 700; letter-spacing: .02em; }
+#count  { font-size: 12px; opacity: .6; font-variant-numeric: tabular-nums; }
+#count b { font-size: 14px; opacity: 1; }
+
+#cols {
+  display: grid; grid-template-columns: 48px 1fr 52px;
+  gap: 8px; padding: 0 10px 6px;
+  font-size: 8.5px; font-weight: 700; letter-spacing: .12em; opacity: .45;
+}
+#c-ping { text-align: right; }
+
+#rows { overflow-y: auto; display: flex; flex-direction: column; gap: 2px; scrollbar-width: thin; }
+.row {
+  display: grid; grid-template-columns: 48px 1fr 52px;
+  gap: 8px; align-items: center;
+  padding: 7px 10px; border-radius: 999px;
+  font-size: 12.5px;
+}
+.row .r-id   { opacity: .5; font-variant-numeric: tabular-nums; font-size: 11px; }
+.row .r-name { font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.row .r-ping { text-align: right; opacity: .7; font-variant-numeric: tabular-nums; font-size: 11.5px; }
+.row.me { background: rgba(255, 255, 255, 0.10); }
+.row.me .r-name::after { content: ' ·'; opacity: .5; }
+.r-ping.good { opacity: .9; } .r-ping.mid { opacity: .8; } .r-ping.bad { opacity: .65; }
+
+#foot {
+  margin-top: 10px; padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex; justify-content: space-between;
+  font-size: 10px; opacity: .55; letter-spacing: .05em;
+}
+#staff-line b { font-weight: 700; }
+
+/* Demo en browser */
+html.demo, html.demo body { background: linear-gradient(135deg, #111318 0%, #1b1e26 50%, #0c0d11 100%); height: 100%; }
